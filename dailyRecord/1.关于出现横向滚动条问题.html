@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<style>
+	.div1{
+		margin:20px auto;
+	}
+	.container
+	{
+	    width: 800px;
+	    margin: 0 auto;
+	    height: 100px;
+	    background-color: #ccc;
+	    overflow-x: scroll;
+	}
+	 
+	.subcontainer
+	{
+	    width: 920px;
+	}
+	 
+	.banner
+	{
+	    margin-left: 5px;
+	    margin-top:10px;
+	    width: 300px;
+	    height: 20px;
+	    background-color: #f0f;
+	    float: left;
+	}
+	</style>
+	<title>测试</title>
+</head>
+<body>
+    <div class="div1">
+    <h3>我们浮动的div自动换行了，并不是根据我们的设置出现横向滚动条</h3>
+	    <div class="container">
+	            <div class="banner">
+	                123
+	            </div>
+	            <div class="banner">
+	                123
+	            </div>
+	            <div class="banner">
+	                123
+	            </div>	         
+	    </div>
+    </div>
+    <div class="div1">
+    <h3>为了解决这个问题，我们在浮动div的外侧再加一个div,并设置其宽度超过父div,但大于三个浮动div宽度的总和</h3>
+	    <div class="container">
+	        <div class="subcontainer">
+	            <div class="banner">
+	                123
+	            </div>
+	            <div class="banner">
+	                123
+	            </div>
+	            <div class="banner">
+	                123
+	            </div>
+	        </div>
+	         
+	    </div>
+    </div>
+</body>
+	<script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.js"></script>
+</html>
