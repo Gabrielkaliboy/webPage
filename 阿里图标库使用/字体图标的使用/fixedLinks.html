@@ -72,14 +72,14 @@
 </head>
 <body>
 	<div id="container">
-		<div id="header">哈哈哈哈哈</div>
+		<div id="header">右侧的快速导航，当屏幕滚动多余一屏的时候，出现快速回到顶部按钮</div>
 		<div class="leaveMessage">
 		    <ul>
 		        <li class="LMLi">
 		            <span class="LMTitle">意见反馈</span>
 		            <span class="LMIcon"><i class="iconfont">&#xe600;</i></span>
 		        </li>
-		        <li class="LMLi" style="border-top:none">
+		        <li class="LMLi" style="border-top:none" id="returnTopLi">
 		            <span class="LMTitle">返回顶部</span>
 		            <span class="LMIcon"><a href="#header"><i class="iconfont">&#xe60f;</i></a></span>
 		        </li>
@@ -87,4 +87,33 @@
 		</div>
 	</div>
 </body>
+<script type="text/javascript">
+	$(function(){
+        //这里放的是快速链接js控制
+        var $height = window.screen.height / 2;
+        $(window).scroll(function () {
+            var $scrollTop = $(window).scrollTop();
+            if ($scrollTop > $height) {
+                $("#returnTopLi").css("display", "list-item");
+            } else {
+                $("#returnTopLi").css("display", "none");
+            }
+        });
+        $(".leaveMessage .LMLi").hover(function () {
+            $(this).css({ "background": "#33C1FB" }).find(".LMTitle").css({ "display": "inline-block" }).next(".LMIcon").find("i").css({ "color": "#fff" });
+        }, function () {
+            $(this).css({ "background": "#fff" }).find(".LMTitle").css({ "display": "none" }).next(".LMIcon").find("i").css({ "color": "#24BEFF" });
+        });
+        //为了让回到顶部不那么生硬我们慢速划过去
+        $("#returnTop a").click(function () {
+            $("html, body").animate({
+                scrollTop: $($(this).attr("href")).offset().top + "px"
+            }, {
+                duration: 500,
+                easing: "swing"
+            });
+            return false;
+        });
+	})
+</script>
 </html>
