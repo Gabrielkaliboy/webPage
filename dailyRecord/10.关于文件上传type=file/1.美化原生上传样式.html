@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>定义input type="file" 的样式</title>
+<style type="text/css">
+	body{ font-size:14px;}
+	input{ vertical-align:middle; margin:0; padding:0}
+	/*div设置*/
+	.file-box{ 
+		position:relative;
+		width:340px
+	}
+	/*上传文件的名字*/
+	.textName{ 
+		height:22px; 
+		border:1px solid #cdcdcd; 
+		width:180px;
+	}
+	/*浏览与上传按钮*/
+	.btn{ 
+		background-color:#FFF; 
+		border:1px solid #CDCDCD;
+		height:24px; width:70px;
+	}
+	/*上传type=file区域控制*/
+	.file{ 
+		position:absolute; 
+		top:0; right:80px; 
+		height:24px; 
+		filter:alpha(opacity:0);
+		opacity: 0;
+		width:260px 
+	}
+	#container{
+		width:1100px;
+		margin:50px auto;
+		padding:20px;
+		background:#f8f8f8;
+	}
+</style>
+</head>
+<body>
+<div id="container">
+	<div class="file-box">
+	  <form action="" method="post" enctype="multipart/form-data">
+	  		<!-- 上传文件的名字 -->
+			<input type='text' name='textName' id='textName' class='textName' />  
+			<!-- 浏览按钮 -->
+			<input type='button' class='btn' value='浏览...' />
+			<!-- file区域 -->
+			<!-- 这里将文本框的value,也就是文件的名字赋予给了前面textName文本框 -->
+		    <input type="file" name="fileField" class="file" id="fileField" multiple accept="image/*" size="28" onchange="document.getElementById('textName').value=this.value" />
+		    <!-- 上传按钮 -->
+			<input type="submit" name="submit" class="btn" value="上传" />
+	  </form>
+	</div>
+	<div>
+		<p>accept="image/*" 这个属性限制我们文件上传的类型</p>
+		<p>但是，需要注意的是，虽然使用accept="image/*"很方便，但是在Chrome浏览器下，可能会有文件选择窗口打开非常慢点问题，因此，如果仅仅是上传图片，建议使用：accept="image/png, image/jpeg, image/gif, image/jpg"</p>
+		<p>accept属性值其实是MIME类型, 例如下面几个可能常用的：</p>
+		<p>accept="application/pdf"
+			accept="audio/x-mpeg"
+			accept="text/html"
+			.accept="video/x-mpeg2"</p>
+		<p>然后，多个属性值使用逗号分隔，例如：</p>
+		<pre><input accept="audio/*,video/*,image/*"></pre>
+	</div>
+</div>
+</body>
+</html>

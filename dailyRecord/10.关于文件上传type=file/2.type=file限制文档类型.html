@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>限制文档类型</title>
+</head>
+<body>
+	<form>
+		<p>通过type=file上传文件,通过accept属性来限制浏览的时候，显示指定的文档类型，当然我们还是可以在弹出的窗口里面选择文件类型的</p>
+		<p>更多文件类型，移步这里：http://www.iana.org/assignments/media-types/media-types.xhtml</p>
+		<h3> accept="image/gif" 显示gif文件</h3>
+		<input type="file" name="pic" accept="image/gif" />
+
+		<h3> accept=image/* 显示所有图像文件</h3>
+		<input type="file" name="pic" accept="image/*" />
+
+		<h3> accept=audio/* 显示所有声音文件</h3>
+		<input type="file" name="pic" accept="audio/*" />
+
+		<h3> accept=video/* 显示所有视频文件</h3>
+		<input type="file" name="pic" accept="video/*" />
+
+		<h3> accept=*/* 默认为全部文件类型</h3>
+		<input type="file" name="pic" accept="*/*" />
+
+		<h3> accept="application/msword" 只选择Microsoft Word </h3>
+		<input type="file" name="pic" accept="application/msword" />
+
+		<h3> accept="application/pdf" 显示所有PDF文件</h3>
+		<input type="file" name="pic" accept="application/pdf" />
+
+		<h3> accept="application/pdf,image/*" 显示PDF和图片,中间用逗号进行分割，此时打开的窗口显示自定义文件，注意谁在前面，在Firefox里面下拉选择类型的时候就会谁在前面</h3>
+		<input type="file" name="pic" accept="application/pdf,image/*" />
+	</form>
+</body>
+</html>
