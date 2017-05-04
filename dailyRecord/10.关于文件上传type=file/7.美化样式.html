@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.js"></script>
+    <script>
+        $(function () {
+            //将图片的click事件传递给input
+            $(".uploadDiv img").click(function () {
+                $(".saleUpLoad").click();
+            });
+            //上传文件的名字
+            $(".saleUpLoad").change(function () {
+                var $fileName = $(".saleUpLoad").val();
+                $("#fileName").text($fileName);
+            })
+        })
+    </script>
+    <style>
+        /*上传*/
+        
+        .uploadDiv {
+            width: 150px;
+            height: 150px;
+            border: 1px solid #b0b0b0;
+        }
+        /*上传输入框*/
+        
+        .saleUpLoad {
+            width: 150px;
+            height: 150px;
+            opacity: 0;
+        }
+        
+        .uploadDiv img {
+            width: 70px;
+            position: relative;
+            top: -129px;
+            left: 39px;
+            cursor: pointer;
+        }
+        
+        .uploadDiv h4 {
+            position: relative;
+            top: -139px;
+            left: 41px;
+        }
+        /*文件名字*/
+        
+        #fileName {
+            padding: 10px;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="uploadDiv">
+        <input class="saleUpLoad" name="saleUpLoad" type="file" />
+        <img src="add.png" />
+        <h4>添加图片</h4>
+    </div>
+    <div id="fileName"></div>
+</body>
+
+</html>
