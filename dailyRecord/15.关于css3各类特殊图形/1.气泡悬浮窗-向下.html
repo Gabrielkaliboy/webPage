@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>模板</title>
+	<style>
+		body{
+		    background-color: #91a9bf;
+		}
+		.container{
+			width:1100px;
+			margin:50px auto;
+			padding:20px;
+			background:#fff;
+			min-height: 900px;
+		}
+		/**/
+		.tag{
+		    width:300px;
+		    height:100px;
+		    border:5px solid #09F;
+		    position:relative;
+		    background-color:#FFF;
+		}
+		.tag:before,.tag:after{
+		    content:"";
+		    display:block;
+		    border-width:20px;
+		    position:absolute; bottom:-40px;
+		    left:100px;
+		    border-style:solid dashed dashed;
+		    border-color:#09F transparent transparent;
+		    font-size:0;
+		    line-height:0;
+		}
+		.tag:after{
+		    bottom:-33px;
+		    border-color:#FFF transparent transparent;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h2>这里可以制作各种气泡悬浮窗http://code.ciaoca.com/style/bubble/</h2>
+		<h3>向下</h3>
+		<div class="tag">
+		    css3气泡框
+		</div>
+	</div>
+</body>
+</html>
