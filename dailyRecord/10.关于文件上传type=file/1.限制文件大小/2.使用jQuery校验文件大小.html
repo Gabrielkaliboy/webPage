@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.js"></script>
+	<title>此页面有bug</title>
+</head>
+<body>
+	<input type="file" name="tempFile"  id="tempFile" size="40%"  onchange="findSize(this)"/>  
+</body>
+<script type="text/javascript">
+	function findSize(field_id) {
+	    var fileInput = $(field_id)[0];
+	    byteSize = fileInput.files[0].fileSize;
+	    return (Math.ceil(byteSize / 1024)); // Size returned in KB.
+	}
+</script>
+
+</html>
