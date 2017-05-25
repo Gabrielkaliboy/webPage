@@ -1,0 +1,37 @@
+<script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.js"></script>
+<script type="text/javascript" src="layer/layer.js"></script>
+<meta charset="utf-8">
+<div id="content">
+	<h4>如果不进行特殊处理，这个页面将会限制第二次弹出窗口，3.html的大小限制，并且通信受限</h4>
+	<button id="btn2">点击我试试</button>
+	<h3>如果这个页面不引用</h3>
+	<button  type="submit" id="save">保存</button>
+	<button onclick="layer_close();" id="cancel">取消</button>
+</div>
+<script type="text/javascript">
+	//没有处理的代码
+	// $("#btn2").click(function(event) {
+	// 	/* Act on the event */
+	// 	layer.open({
+	// 	  type: 2,
+	// 	  skin: 'layui-layer-rim', //加上边框
+	// 	  area: ['420px', '240px'], //宽高
+	// 	  content: '3.html'
+	// 	});
+	// });
+
+	//处理以后的代码
+	$("#btn2").click(function(event) {
+		/* Act on the event */
+		//这里将他的父辈指向了window，我要求这个页面第二次弹出比第一次大，就得这么写
+		parent.layer.open({
+		  type: 2,
+		  skin: 'layui-layer-rim', //加上边框
+		  area: ['800px', '240px'], //宽高
+		  content: '3.html'
+		});
+	});
+	function layer_close(){
+		parent.layer.close(index);
+	}
+</script>

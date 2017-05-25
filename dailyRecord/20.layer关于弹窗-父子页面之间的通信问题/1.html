@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.js"></script>
+	<script type="text/javascript" src="layer/layer.js"></script>
+	<title>父子通信</title>
+	<style>
+		#container{
+			margin: 100px auto;
+			width:1100px;
+		}
+	</style>
+</head>
+<body>
+	<div id="container">
+		<h4>注意，这个页面涉及到跨域，需要服务器，否则报错</h4>
+		<h3><a href="#" id="btn1">点击我试试</a></h3>
+	</div>
+</body>
+<script type="text/javascript">
+	$("#btn1").click(function(event) {
+		/* Act on the event */
+		layer.open({
+		  type: 2,
+		  skin: 'layui-layer-rim', //加上边框
+		  area: ['420px', '240px'], //宽高
+		  content:"2.html"
+		});
+	});
+</script>
+</html>
