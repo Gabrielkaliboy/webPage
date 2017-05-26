@@ -1,6 +1,22 @@
 <meta charset="utf-8">
+	<script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.js"></script>
 <div id="content1">
 	<h4>如果不进行特殊处理，这个页面将会受限于第一次弹出窗口，2.html的大小限制，并且通信受限</h4>
 	<label for="userName"></label>
-	<input type="text" name="userName">
+	<input type="text" name="userName" id="userName">
+	<button type="submit" id="save">保存</button>
+	<button onclick="layer_close();" id="cancel">取消</button>
 </div>
+<script>
+	$("#save").on("click",function(){
+		//获取当前页面用户信息的输入，并且将它保存到1.html的inputValue里面，注意写法，前面必须有一个parent
+		var $userName=$("#userName").val();
+		parent.$("#inputValue").val($userName);
+		layer_close();
+	})
+	function layer_close(){
+		//必须加入下面这句，否则关闭窗口不起效果还报错
+		var index = parent.layer.getFrameIndex(window.name);
+		parent.layer.close(index);
+	}
+</script>
