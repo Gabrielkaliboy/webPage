@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>兼容解决方案</title>
+	<style>
+		.container{
+			margin:100px auto;
+			width:500px;
+			background: #f0f0f0;
+		}
+		p {
+		    position:relative;
+		    line-height:1.4em;
+		    /* 3 times the line-height to show 3 lines */
+		    height:4.2em;
+		    overflow:hidden;
+		}
+		p::after {
+		    content:"...";
+		    font-weight:bold;
+		    position:absolute;
+		    bottom:0;
+		    right:0;
+		    padding:0 20px 1px 45px;
+		    background:url(http://css88.b0.upaiyun.com/css88/2014/09/ellipsis_bg.png) repeat-y;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<p id="main">掘金是一个高质量的技术社区，从 ECMAScript 6 到 Vue.js，性能优化到开源类库，让你不错过前端开发的每一个技术干货。各大应用市场搜索「掘金」即可下载APP，技术干货尽在掌握掘金是一个高质量的技术社区，从 ECMAScript 6 到 Vue.js，性能优化到开源类库，让你不错过前端开发的每一个技术干货。各大应用市场搜索「掘金」即可下载APP，技术干货尽在掌握</p>
+	</div>
+</body>
+</html>
